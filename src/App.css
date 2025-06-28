@@ -75,14 +75,28 @@ body {
 }
 
 .home h1 {
+  font-family: 'UnifrakturCook', 'Dancing Script', cursive, 'Montserrat', 'Segoe UI', Arial, sans-serif;
   font-size: 2.7rem;
   margin-bottom: 0.7rem;
   color: #357a38;
   letter-spacing: 1.5px;
   text-shadow: 0 2px 8px #b6e2b6;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.home h1::before {
+  content: '';
+  display: inline-block;
+  width: 38px;
+  height: 38px;
+  background: url('/favicon.svg') no-repeat center/contain;
+  margin-right: 0.5rem;
 }
 
 .subtitle {
+  font-family: 'Dancing Script', cursive, 'Montserrat', 'Segoe UI', Arial, sans-serif;
   font-size: 1.18rem;
   color: #5b7c5a;
   margin-bottom: 2.2rem;
@@ -120,13 +134,26 @@ body {
 
 footer {
   display: flex;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
   padding: 1.2rem 0 0.7rem 0;
   background: #e6f5e6cc;
   border-top: 1.5px solid #b6e2b6;
   border-radius: 1.5rem 1.5rem 0 0;
   box-shadow: 0 -2px 12px #b6e2b6aa;
   margin-top: 2rem;
+}
+
+.footer-brand {
+  font-family: 'Dancing Script', cursive, 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  font-size: 1.15rem;
+  color: #357a38;
+  font-weight: 700;
+  letter-spacing: 1px;
+  opacity: 0.9;
+  flex: 1;
+  text-align: center;
 }
 
 footer button {
@@ -359,4 +386,42 @@ button {
   max-width: 180px;
   border-radius: 1rem;
   box-shadow: 0 2px 8px #b6e2b6aa;
+}
+
+/* Ilustrações decorativas */
+.illustration-leaf {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90px;
+  opacity: 0.13;
+  z-index: 0;
+}
+
+.illustration-branch {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 120px;
+  opacity: 0.11;
+  z-index: 0;
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: none; }
+}
+
+.screen, .herb-list-item, .quick-access button, .herb-form, .footer-brand {
+  animation: fadeIn 0.8s cubic-bezier(.4,0,.2,1);
+}
+
+.quick-access button, .herb-list-item, .herb-form button {
+  transition: box-shadow 0.3s, transform 0.2s, background 0.2s;
+}
+
+.quick-access button:hover, .herb-list-item:hover, .herb-form button:hover {
+  box-shadow: 0 4px 18px #8fd18faa, 0 0 0 2px #b6e2b6;
+  transform: scale(1.06);
 }

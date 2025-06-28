@@ -6,14 +6,20 @@ import { uploadImagem } from './uploadImagem'
 
 function HomeScreen({ onNavigate }) {
   return (
-    <div className="screen home">
-      <h1>Grimório Verde 🌿</h1>
+    <div className="screen home" style={{position:'relative',overflow:'hidden'}}>
+      <img src="/favicon.svg" className="illustration-leaf" alt="folha decorativa" />
+      <h1>Grimório Verde Clã Michetti 🌿</h1>
       <p className="subtitle">O poder da natureza ao alcance da sua intuição.</p>
       <div className="quick-access">
         <button onClick={() => onNavigate('search')}>🔍 Buscar erva</button>
         <button onClick={() => onNavigate('list')}>📖 Lista completa</button>
         <button onClick={() => onNavigate('categories')}>🌒 Categorias</button>
       </div>
+      <svg className="illustration-branch" viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 50 Q60 10 110 50" stroke="#357a38" strokeWidth="4" fill="none"/>
+        <ellipse cx="30" cy="40" rx="8" ry="18" fill="#b6e2b6" stroke="#357a38" strokeWidth="2"/>
+        <ellipse cx="90" cy="40" rx="8" ry="18" fill="#b6e2b6" stroke="#357a38" strokeWidth="2"/>
+      </svg>
     </div>
   )
 }
@@ -319,6 +325,7 @@ function App() {
       {screen === 'extras' && <ExtrasScreen onNavigate={setScreen} />}
       {screen === 'settings' && <SettingsScreen onNavigate={setScreen} />}
       <footer>
+        <span className="footer-brand">Grimório Verde Clã Michetti © {new Date().getFullYear()}</span>
         <button onClick={() => setScreen('home')}>🏠 Início</button>
         <button onClick={() => setScreen('search')}>🔍 Buscar</button>
         <button onClick={() => setScreen('categories')}>🌒 Categorias</button>
