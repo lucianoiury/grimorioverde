@@ -1,0 +1,362 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+body {
+  background: linear-gradient(120deg, #e6f5e6 0%, #b6e2b6 100%);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* App base para Grimório Verde */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: none;
+  color: #2e3d2f;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+}
+
+.screen {
+  flex: 1;
+  padding: 2.5rem 1.2rem 1.2rem 1.2rem;
+  max-width: 520px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.92);
+  border-radius: 2rem;
+  box-shadow: 0 4px 32px #0002;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  border: 1.5px solid #b6e2b6;
+}
+
+.home h1 {
+  font-size: 2.7rem;
+  margin-bottom: 0.7rem;
+  color: #357a38;
+  letter-spacing: 1.5px;
+  text-shadow: 0 2px 8px #b6e2b6;
+}
+
+.subtitle {
+  font-size: 1.18rem;
+  color: #5b7c5a;
+  margin-bottom: 2.2rem;
+  font-style: italic;
+  text-align: center;
+}
+
+.quick-access {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  justify-content: center;
+}
+
+.quick-access button {
+  margin: 0.5rem;
+  padding: 1.1rem 1.7rem;
+  font-size: 1.13rem;
+  border-radius: 2rem;
+  border: none;
+  background: linear-gradient(90deg, #b6e2b6 60%, #e6f5e6 100%);
+  color: #2e3d2f;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 12px #b6e2b6aa;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.quick-access button:hover {
+  background: #8fd18f;
+  transform: translateY(-3px) scale(1.06);
+  box-shadow: 0 4px 18px #8fd18faa;
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  padding: 1.2rem 0 0.7rem 0;
+  background: #e6f5e6cc;
+  border-top: 1.5px solid #b6e2b6;
+  border-radius: 1.5rem 1.5rem 0 0;
+  box-shadow: 0 -2px 12px #b6e2b6aa;
+  margin-top: 2rem;
+}
+
+footer button {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  color: #357a38;
+  cursor: pointer;
+  padding: 0.7rem 1.2rem;
+  border-radius: 1.2rem;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  font-weight: 600;
+}
+
+footer button:hover {
+  background: #b6e2b6;
+  color: #2e3d2f;
+  transform: scale(1.08);
+}
+
+.herb-detail h2 {
+  font-size: 1.7rem;
+  margin-bottom: 0.7rem;
+  color: #357a38;
+  text-shadow: 0 2px 8px #b6e2b6;
+}
+
+.herb-latin {
+  font-size: 1.08rem;
+  color: #5b7c5a;
+  font-style: italic;
+}
+
+.herb-img {
+  width: 100%;
+  max-width: 340px;
+  border-radius: 1.2rem;
+  margin: 1.2rem 0;
+  box-shadow: 0 2px 12px #b6e2b6aa;
+  border: 2px solid #b6e2b6;
+}
+
+.herb-info {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.7rem;
+}
+
+.herb-info li {
+  margin-bottom: 0.7rem;
+  font-size: 1.13rem;
+  color: #2e3d2f;
+}
+
+.herb-list {
+  margin: 1.7rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.herb-list-item {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(90deg, #e6f5e6 60%, #f5f7f2 100%);
+  border-radius: 1.2rem;
+  padding: 0.9rem 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 2px 10px #b6e2b6aa;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  border: 1px solid #b6e2b6;
+}
+
+.herb-list-item:hover {
+  background: #cce3cc;
+  transform: scale(1.03);
+  box-shadow: 0 4px 18px #8fd18faa;
+}
+
+.herb-list-item img {
+  width: 62px;
+  height: 62px;
+  object-fit: cover;
+  border-radius: 0.9rem;
+  margin-right: 1.2rem;
+  border: 2px solid #b6e2b6;
+  box-shadow: 0 2px 8px #b6e2b6aa;
+}
+
+.filters {
+  display: flex;
+  gap: 1rem;
+  margin: 1.2rem 0 1.7rem 0;
+  justify-content: center;
+}
+
+.filters select {
+  padding: 0.6rem 1.2rem;
+  border-radius: 1.2rem;
+  border: 1.5px solid #b6e2b6;
+  background: #f5f7f2;
+  color: #357a38;
+  font-size: 1.05rem;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+  font-weight: 500;
+  box-shadow: 0 1px 4px #b6e2b6aa;
+}
+
+.filters select:focus {
+  border: 2px solid #8fd18f;
+  box-shadow: 0 2px 8px #8fd18faa;
+}
+
+button {
+  font-family: inherit;
+}
+
+.herb-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.herb-form input {
+  padding: 0.7rem 1rem;
+  border-radius: 1.2rem;
+  border: 1.5px solid #b6e2b6;
+  background: #f5f7f2;
+  color: #357a38;
+  font-size: 1.05rem;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+  font-weight: 500;
+  box-shadow: 0 1px 4px #b6e2b6aa;
+}
+
+.herb-form input:focus {
+  border: 2px solid #8fd18f;
+  box-shadow: 0 2px 8px #8fd18faa;
+}
+
+.herb-form button[type="submit"] {
+  background: linear-gradient(90deg, #b6e2b6 60%, #e6f5e6 100%);
+  color: #2e3d2f;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 1.2rem;
+  padding: 0.8rem 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 2px 12px #b6e2b6aa;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.herb-form button[type="submit"]:hover {
+  background: #8fd18f;
+  transform: scale(1.04);
+}
+
+.herb-form button[type="button"] {
+  background: #e6f5e6;
+  color: #357a38;
+  font-weight: 500;
+  font-size: 1rem;
+  border: 1px solid #b6e2b6;
+  border-radius: 1.2rem;
+  padding: 0.7rem 1.2rem;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.herb-form button[type="button"]:hover {
+  background: #b6e2b6;
+  color: #2e3d2f;
+}
+
+.screen.admin h2 {
+  color: #357a38;
+  margin-bottom: 1rem;
+}
+
+.screen.admin h3 {
+  margin-top: 2rem;
+  color: #357a38;
+}
+
+.screen.admin ul {
+  list-style: none;
+  padding: 0;
+}
+
+.screen.admin li {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.screen.admin li button {
+  font-size: 0.95rem;
+  padding: 0.3rem 0.9rem;
+  border-radius: 1rem;
+  border: 1px solid #b6e2b6;
+  background: #e6f5e6;
+  color: #357a38;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.screen.admin li button:hover {
+  background: #b6e2b6;
+}
+
+.screen.admin li button:last-child {
+  background: #ffdddd;
+  color: #a00;
+  border: 1px solid #faa;
+  margin-left: 0.3rem;
+}
+
+.screen.admin li button:last-child:hover {
+  background: #ffbdbd;
+}
+
+.screen.admin img {
+  display: block;
+  margin: 0.5rem auto 1rem auto;
+  max-width: 180px;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px #b6e2b6aa;
+}
