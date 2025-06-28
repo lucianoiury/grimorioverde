@@ -45,7 +45,15 @@ function SearchScreen({ onNavigate, onSelectHerb, refresh }) {
   return (
     <div className="screen search">
       <h2>Buscar Erva</h2>
-      <input placeholder="Nome popular ou científico" value={busca} onChange={e => setBusca(e.target.value)} />
+      <div className="search-input-wrapper">
+        <span className="search-icon">🔍</span>
+        <input
+          type="text"
+          placeholder="Nome popular ou científico"
+          value={busca}
+          onChange={e => setBusca(e.target.value)}
+        />
+      </div>
       <div className="filters">
         <select value={filtroElemento} onChange={e => setFiltroElemento(e.target.value)}>
           <option value="">Elemento</option>
@@ -142,6 +150,12 @@ function HerbDetailScreen({ herb, onNavigate }) {
         <li><b>Planeta regente:</b> {herb.planeta}</li>
         <li><b>Associações:</b> {(herb.associacoes || []).join(', ')}</li>
       </ul>
+      {herb.uso_magia && (
+        <div className="herb-uso-magico">
+          <b>Uso na magia:</b>
+          <p>{herb.uso_magia}</p>
+        </div>
+      )}
       <button onClick={() => onNavigate('search')}>Voltar</button>
     </div>
   )
@@ -187,7 +201,8 @@ function AdminScreen({ onNavigate, onHerbAdded }) {
     elemento: '',
     planeta: '',
     associacoes: '',
-    imagem_url: ''
+    imagem_url: '',
+    uso_magia: '',
   })
   const [editId, setEditId] = useState(null)
   const [ervas, setErvas] = useState([])
@@ -216,7 +231,8 @@ function AdminScreen({ onNavigate, onHerbAdded }) {
       elemento: erva.elemento || '',
       planeta: erva.planeta || '',
       associacoes: (erva.associacoes || []).join(', '),
-      imagem_url: erva.imagem_url || ''
+      imagem_url: erva.imagem_url || '',
+      uso_magia: erva.uso_magia || '',
     })
     window.scrollTo(0, 0)
   }
@@ -249,7 +265,7 @@ function AdminScreen({ onNavigate, onHerbAdded }) {
     else {
       setMsg(editId ? 'Erva atualizada!' : 'Erva cadastrada com sucesso!')
       setForm({
-        nome_popular: '', nome_cientifico: '', propriedades: '', funcoes: '', elemento: '', planeta: '', associacoes: '', imagem_url: ''
+        nome_popular: '', nome_cientifico: '', propriedades: '', funcoes: '', elemento: '', planeta: '', associacoes: '', imagem_url: '', uso_magia: ''
       })
       setEditId(null)
       if (onHerbAdded) onHerbAdded()
@@ -268,6 +284,7 @@ function AdminScreen({ onNavigate, onHerbAdded }) {
         <input name="planeta" placeholder="Planeta" value={form.planeta} onChange={handleChange} />
         <input name="associacoes" placeholder="Associações (separar por vírgula)" value={form.associacoes} onChange={handleChange} />
         <input name="imagem_url" placeholder="URL da imagem" value={form.imagem_url} onChange={handleChange} />
+        <textarea name="uso_magia" placeholder="Uso na magia (ex: rituais, banhos, defumações...)" value={form.uso_magia} onChange={handleChange} rows={3} style={{resize:'vertical'}} />
         <input type="file" accept="image/*" onChange={async e => {
           const file = e.target.files[0]
           if (file) {
@@ -281,7 +298,7 @@ function AdminScreen({ onNavigate, onHerbAdded }) {
         }} />
         {form.imagem_url && <img src={form.imagem_url} alt="Pré-visualização" style={{maxWidth:'180px',margin:'0.5rem auto',display:'block',borderRadius:'1rem',boxShadow:'0 2px 8px #b6e2b6aa'}} />}
         <button type="submit" disabled={loading}>{loading ? 'Salvando...' : (editId ? 'Atualizar' : 'Salvar')}</button>
-        {editId && <button type="button" onClick={() => { setEditId(null); setForm({ nome_popular: '', nome_cientifico: '', propriedades: '', funcoes: '', elemento: '', planeta: '', associacoes: '', imagem_url: '' }) }}>Cancelar edição</button>}
+        {editId && <button type="button" onClick={() => { setEditId(null); setForm({ nome_popular: '', nome_cientifico: '', propriedades: '', funcoes: '', elemento: '', planeta: '', associacoes: '', imagem_url: '', uso_magia: '' }) }}>Cancelar edição</button>}
       </form>
       {msg && <p>{msg}</p>}
       <h3>Ervas cadastradas</h3>

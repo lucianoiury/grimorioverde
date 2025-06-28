@@ -333,6 +333,46 @@ button {
   color: #2e3d2f;
 }
 
+.herb-form textarea {
+  padding: 0.8rem 1rem;
+  border-radius: 1.2rem;
+  border: 1.5px solid #b6e2b6;
+  background: #f5f7f2;
+  color: #357a38;
+  font-size: 1.05rem;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+  font-family: inherit;
+  min-height: 60px;
+  box-shadow: 0 1px 4px #b6e2b6aa;
+}
+
+.herb-form textarea:focus {
+  border: 2px solid #8fd18f;
+  box-shadow: 0 2px 8px #8fd18faa;
+}
+
+.herb-uso-magico {
+  background: #e6f5e6;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 1px 6px #b6e2b6aa;
+  color: #357a38;
+}
+
+.herb-uso-magico b {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 1.08rem;
+}
+
+.herb-uso-magico p {
+  margin: 0;
+  font-size: 1.05rem;
+  font-style: italic;
+}
+
 .screen.admin h2 {
   color: #357a38;
   margin-bottom: 1rem;
@@ -424,4 +464,59 @@ button {
 .quick-access button:hover, .herb-list-item:hover, .herb-form button:hover {
   box-shadow: 0 4px 18px #8fd18faa, 0 0 0 2px #b6e2b6;
   transform: scale(1.06);
+}
+
+.screen.search {
+  position: relative;
+}
+
+.search-input-wrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1.2rem;
+}
+
+.search-input-wrapper input {
+  width: 100%;
+  padding-left: 2.5rem;
+}
+
+.search-icon {
+  position: absolute;
+  left: 0.9rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.3rem;
+  color: #5b7c5a;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.screen.search input[type="text"],
+.screen.search input[type="search"],
+.screen.search input:not([type]),
+.screen.search input {
+  width: 100%;
+  padding: 0.9rem 1.2rem;
+  border-radius: 1.2rem;
+  border: 2px solid #b6e2b6;
+  background: #f5f7f2;
+  color: #357a38;
+  font-size: 1.1rem;
+  outline: none;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 1px 6px #b6e2b6aa;
+  transition: border 0.2s, box-shadow 0.2s;
+  font-family: 'Dancing Script', cursive, 'Montserrat', 'Segoe UI', Arial, sans-serif;
+}
+
+.screen.search input:focus {
+  border: 2.5px solid #8fd18f;
+  box-shadow: 0 2px 12px #8fd18faa;
+}
+
+.screen.search input::placeholder {
+  color: #5b7c5a;
+  opacity: 0.7;
+  font-style: italic;
 }
