@@ -8,6 +8,7 @@ function HomeScreen({ onNavigate }) {
   return (
     <div className="screen home" style={{position:'relative',overflow:'hidden'}}>
       <img src="/favicon.svg" className="illustration-leaf" alt="folha decorativa" />
+      <img src="/sigiloVermelho.png" alt="Logo Clã Michetti" className="logo-michetti" />
       <h1>Grimório Verde Clã Michetti 🌿</h1>
       <p className="subtitle">O poder da natureza ao alcance da sua intuição.</p>
       <div className="quick-access">
